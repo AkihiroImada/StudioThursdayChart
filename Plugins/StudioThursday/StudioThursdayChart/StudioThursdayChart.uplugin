@@ -1,0 +1,34 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "StudioThursdayChart",
+	"Description": "Create a DataAsset in tabular form from the CSV to be imported; the entries contained in the DataAsset can be easily accessed using a unique key.",
+	"Category": "Other",
+	"CreatedBy": "akihiro",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "StudioThursdayChart",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "StudioThursdayChartEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "StudioThursdayChartUncookedOnly",
+			"Type": "UncookedOnly",
+			"LoadingPhase": "PreLoadingScreen"
+		},
+	]
+}
