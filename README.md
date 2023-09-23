@@ -11,7 +11,7 @@
 ![2023-09-23 15_41_46-MyProject](https://github.com/AkihiroImada/StudioThursdayChart/assets/17783214/891b06e5-b9f2-45ab-ad58-0a93a791b626)
 
 # 使い方
-1. 設定した特定の接頭辞（デフォルトは```DT_```）をもつCSVファイルをドラッグアンドドロップしてDataTableをインポートする
+1. 設定した特定の接頭辞（デフォルトは```DT_```）をもつCSVファイルをドラッグアンドドロップしてDataTableをインポートする（RowNameがそのままGameplayTagになる点に注意）
 ![2023-09-23 15_51_01-MyProject - Unreal Editor](https://github.com/AkihiroImada/StudioThursdayChart/assets/17783214/7a3e5892-ab99-49ca-ad11-3a0faaaaefbd)
 2. 自動的に```ChartDataAsset```と```GameplayTagDataTable```が生成される
 ![2023-09-23 15_58_00-MyProject - Unreal Editor](https://github.com/AkihiroImada/StudioThursdayChart/assets/17783214/5585c0ca-c9f0-4fd0-b5c4-1f7bef176b38)
