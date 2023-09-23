@@ -58,5 +58,8 @@ https://docs.unrealengine.com/4.26/ja/Basics/AssetsAndPackages/AutoReImport/
 ```ProjectSettings-Project-GameplayTags```内にあります。
 ![2023-09-23 16_17_21-Project Settings](https://github.com/AkihiroImada/StudioThursdayChart/assets/17783214/d1ddac03-6049-40a4-8083-80b929de4785)
 
+# 動作確認バージョン
+UnrealEngine 5.1.1-23901901+++UE5+Release-5.1
+
 # 不具合報告や要望や質問
 当リポジトリのIssuesへお願いいたします。
