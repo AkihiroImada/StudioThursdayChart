@@ -24,7 +24,7 @@ void UChartEditorFunctionLibraly::AddGameplayTagDataTableToSettings(const UDataT
 	FSoftObjectPath Path(&DataTable);
 	if (!Settings->GameplayTagTableList.Contains(Path))
 	{
-		if (USourceControlHelpers::CheckOutFile(Settings->GetDefaultConfigFilename(), false))
+		if (CheckOutFileIfNeed(Settings->GetDefaultConfigFilename(), false))
 		{
 			// HACK: If the array is empty, a line with "= __ClearArray__" will be duplicated in the ini file each time you SaveConfig.
 			if (Settings->CategoryRemapping.Num() == 0) { Settings->CategoryRemapping.Add(FGameplayTagCategoryRemap()); }
@@ -121,4 +121,13 @@ bool UChartEditorFunctionLibraly::CheckIsSourceDataTable(const UDataTable& DataT
 	const FRegexPattern RegexPattern = FRegexPattern(FString::Printf(TEXT("%s.*%s"), *StudioThursdayChartEditorSettings->SourceDataTablePrefix, *StudioThursdayChartEditorSettings->SourceDataTablePostfix));
 	FRegexMatcher RegexMatcher = FRegexMatcher(RegexPattern, DataTable.GetName());
 	return RegexMatcher.FindNext();
+}
+
+bool UChartEditorFunctionLibraly::CheckOutFileIfNeed(const FString& InFile, bool bSilent)
+{
+	if (USourceControlHelpers::IsEnabled())
+	{
+		return USourceControlHelpers::CheckOutFile(InFile, bSilent);
+	}
+	return true;
 }

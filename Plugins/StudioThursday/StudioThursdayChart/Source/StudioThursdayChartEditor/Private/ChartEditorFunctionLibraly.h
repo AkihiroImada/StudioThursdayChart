@@ -20,5 +20,6 @@ public:
 	static UDataTable* CreateGameplayTagDataTable(const UDataTable& DataTable);
 	static UChartDataAsset* CreateChartDataAsset(UDataTable& DataTable, const UDataTable& GameplayTagDataTable);
     static bool CheckIsSourceDataTable(const UDataTable& DataTable);
+	static bool CheckOutFileIfNeed(const FString& InFile, bool bSilent);
 	static const FName DUMMY;
 };
