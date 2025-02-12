@@ -3,7 +3,11 @@
 
 #include "ChartEditorFunctionLibraly.h"
 #include "AssetToolsModule.h"
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 5)
+#include "AssetRegistry/AssetRegistryModule.h"
+#else
 #include "AssetRegistryModule.h"
+#endif
 #include "Engine/DataTable.h"
 #include "Engine/UserDefinedEnum.h"
 #include "UObject/Class.h"

@@ -8,6 +8,9 @@
 #include "UObject/UnrealType.h"
 #include "GameplayTagsManager.h"
 #include "ChartDataAsset.h"
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 5)
+#include "Blueprint/BlueprintExceptionInfo.h"
+#endif
 #include "ChartFunctionLibrary.generated.h"
 
 class UChartDataAsset;
