@@ -129,6 +129,11 @@ bool UChartEditorFunctionLibraly::CheckIsSourceDataTable(const UDataTable& DataT
 
 bool UChartEditorFunctionLibraly::CheckOutFileIfNeed(const FString& InFile, bool bSilent)
 {
+	FString Path = FPaths::ProjectConfigDir() + InFile;
+	if (!FPaths::FileExists(Path)) 
+	{
+		return true; 
+	}
 	if (USourceControlHelpers::IsEnabled())
 	{
 		return USourceControlHelpers::CheckOutFile(InFile, bSilent);
