@@ -43,6 +43,7 @@ void UChartEditorFunctionLibraly::AddGameplayTagDataTableToSettings(const UDataT
 
 			Settings->GameplayTagTableList.AddUnique(Path);
 			Settings->SaveConfig(CPF_Config, *Settings->GetDefaultConfigFilename());
+			Settings->UpdateDefaultConfigFile();
 		}
 	}
 	UGameplayTagsManager::Get().EditorRefreshGameplayTagTree();
