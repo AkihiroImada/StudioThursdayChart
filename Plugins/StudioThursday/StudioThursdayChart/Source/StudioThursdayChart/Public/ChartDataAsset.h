@@ -15,12 +15,10 @@ class STUDIOTHURSDAYCHART_API UChartDataAsset : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 public:
-#if WITH_EDITORONLY_DATA
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Chart Development")
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Chart Runtime")
 		TObjectPtr<UDataTable> DataTable;
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Chart Development")
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Chart Runtime")
 		TObjectPtr<const UDataTable> GameplayTagDataTable;
-#endif
 #if WITH_EDITOR
 		void Build();
 #endif
