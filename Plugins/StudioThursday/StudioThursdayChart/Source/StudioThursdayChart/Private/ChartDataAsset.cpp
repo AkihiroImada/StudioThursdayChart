@@ -75,6 +75,12 @@ void UChartDataAsset::Serialize(FStructuredArchiveRecord Record)
 {
 	Super::Serialize(Record);
 
+	// CDO はデータを持たないのでカスタムシリアライズをスキップ
+	if (HasAnyFlags(RF_ClassDefaultObject))
+	{
+		return;
+	}
+
 	FArchive& BaseArchive = Record.GetUnderlyingArchive();
 
 	if (RowStruct && RowStruct->HasAnyFlags(RF_NeedLoad))
