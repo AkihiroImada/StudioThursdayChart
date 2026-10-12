@@ -64,6 +64,18 @@ public:
 				P_NATIVE_BEGIN;
 				bSuccess = Generic_GetChartDataAssetRow(ChartDataAsset, RowKey, OutRowPtr);
 				P_NATIVE_END;
+
+				if (!bSuccess)
+				{
+					FBlueprintExceptionInfo ExceptionInfo(
+						EBlueprintExceptionType::AccessViolation,
+						FText::Format(
+							NSLOCTEXT("GetChartDataAssetRow", "RowNotFound", "Row not found. ChartDataAsset: {0}, RowKey: {1}"),
+							FText::FromString(ChartDataAsset->GetPathName()),
+							FText::FromString(RowKey.ToString()))
+					);
+					FBlueprintCoreDelegates::ThrowScriptException(P_THIS, Stack, ExceptionInfo);
+				}
 			}
 			else
 			{
@@ -120,6 +132,18 @@ public:
 				P_NATIVE_BEGIN;
 				bSuccess = Generic_GetChartDataAssetRowByIndex(ChartDataAsset, Index, OutRowPtr);
 				P_NATIVE_END;
+
+				if (!bSuccess)
+				{
+					FBlueprintExceptionInfo ExceptionInfo(
+						EBlueprintExceptionType::AccessViolation,
+						FText::Format(
+							NSLOCTEXT("GetChartDataAssetRowByIndex", "RowNotFound", "Row not found. ChartDataAsset: {0}, Index: {1}"),
+							FText::FromString(ChartDataAsset->GetPathName()),
+							FText::AsNumber(Index))
+					);
+					FBlueprintCoreDelegates::ThrowScriptException(P_THIS, Stack, ExceptionInfo);
+				}
 			}
 			else
 			{

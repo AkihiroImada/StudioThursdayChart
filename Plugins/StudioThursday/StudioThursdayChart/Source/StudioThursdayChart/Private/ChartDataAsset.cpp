@@ -47,12 +47,12 @@ TArray<FGameplayTag> UChartDataAsset::GetRowTags() const
 uint8* UChartDataAsset::GetData(const FGameplayTag& Tag) const
 {
 	uint8* const* RowDataPtr = RowMap.Find(Tag);
-	return *RowDataPtr;
+	return RowDataPtr ? *RowDataPtr : nullptr;
 }
 
 uint8* UChartDataAsset::GetDataByIndex(const int Index) const
 {
-	return RowArray[Index];
+	return RowArray.IsValidIndex(Index) ? RowArray[Index] : nullptr;
 }
 
 const TMap<FGameplayTag, uint8*>& UChartDataAsset::GetRowMap() const
